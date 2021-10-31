@@ -9,7 +9,7 @@ int solution(vector<int> seq)
 	int n = seq.size();
 	vector<int> seq_len(n);
 	int m = 1;
-	for (int i = n - 1; i >= 0; i--)
+	for (int i = n - 1; i >= 0; i--)k
 	{
 		seq_len[i] = 1;
 		for (int j = i + 1; j < n; j++)
