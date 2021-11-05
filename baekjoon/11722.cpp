@@ -22,7 +22,7 @@ int solution(vector<int> seq)
 		}
 	}
 	return m;
-}k
+}
 
 int main()
 {
