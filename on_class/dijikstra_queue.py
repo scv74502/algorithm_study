@@ -22,3 +22,8 @@ def solution(N, road, K):
                 heapq.heappush(q, (cost, i[0]))
 
     return len(list(filter(lambda x: x <= K, distance)))
+
+if __name__ == '__main__':
+    rpt = int(sys.stdin.readline())
+    for _ in range(rpt):
+        n = int(sys.stdin.readline())
