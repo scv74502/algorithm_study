@@ -29,6 +29,7 @@ def mst_prim(graph, n):
 
 if __name__ == '__main__':
     rpt = int(sys.stdin.readline()) # time to repeat
+    node, vernum = 0, 0
     for _ in range(rpt):
         n = int(sys.stdin.readline()) # number of node
         graph = [[] for _ in range(n+1)]
