@@ -1,34 +1,27 @@
 import heapq
 import sys
 
-def solution(graph, n):
-    # init graph
-    # graph = [[] for _ in range(N + 1)]
-    # for ele in road:
-        # graph[ele[0]].append((ele[1], ele[2]))
-        # graph[ele[1]].append((ele[0], ele[2]))
-    distance = [[999999] * (len(graph)) for _ in range(len(graph))]
-    for cur in range(1, n+1):
+def solution(graph, N):
+    result = []
+    for i in range(1, N+1):
+        distance = [99999999] * (N + 1)
         q = []
-        heapq.heappush(q, (0, cur))
-        distance[cur][cur] = 0
+        heapq.heappush(q, (0, i))
+        distance[i] = 0
         while q:
             dist, now = heapq.heappop(q)
-            if distance[cur][now] < dist:
+            if distance[now] < dist:
                 continue
             for i in graph[now]:
                 cost = dist + i[1]
-                if cost < distance[cur][i[0]]:
-                    distance[cur][i[0]] = cost
+                if cost < distance[i[0]]:
+                    distance[i[0]] = cost
                     heapq.heappush(q, (cost, i[0]))
 
-    result = 0
-    visited = []
-    for ele in distance:
-        ele.remove(min(ele))
-        if min(ele) != 999999:
-            result += min(ele)
-            visited.append(distance.index(min(ele)))
+        if
+            distance.remove(0)
+        result.append(min(distance))
+
     return result
 
 if __name__ == '__main__':
