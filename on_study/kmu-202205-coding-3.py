@@ -40,7 +40,7 @@ def bfs(u, graph, t):
 
 # n이 노드 수, t는 시간
 n, t = map(int, sys.stdin.readline().split())
-
+# n * n 형태의 그래프
 graph = [[] for _ in range(n)]
 
 """
@@ -66,6 +66,16 @@ print(ans)
 """
 시간을 줄이기 위하여 다이나믹 프로그래밍을 사용하는 방법이 있음
 시간을 0부터 1까지 증가시키며 패턴을 파악하기
+
+노드 u에서 x만큼 시간이 있을 때에 비상 연락이 가능한 사람의 수를 X(u, x)라 한다면
+
+ans = 0
+for v in n(u):
+    #첫 연락 다음 연락시 노드 수
+    ans += x(v, t-1)
+
+# 겹치는 수 * 이웃의 수를 곱함
+ans -= x(u, t, 2)
 """
 
 
